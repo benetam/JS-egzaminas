@@ -20,12 +20,12 @@ function getData() {
     fetch(ENDPOINT).then(function(res){
         return res.json();
     }).then(function (data){
-        console.log(data.items);
-        data.items.forEach(item => {
-            console.log(item.login);
-            console.log(item.avatar_url);
+        console.log(data.users);
+        data.users.forEach(user => {
+            console.log(user.login);
+            console.log(user.avatar_url);
             let itemCard = document.createElement('div');
-            itemCard.innerHTML = `${item.login} + ${item.avatar_url}`;
+            itemCard.innerHTML = `${user.login} + ${user.avatar_url}`;
             results.append(itemCard);
         })
         }).catch(function(e){
