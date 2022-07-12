@@ -13,4 +13,18 @@ turėti bent minimalų stilių ir būti responsive;
 // const cars = [];
 fetch('cars.json')
 .then((response) => response.json())
-.then((data) => console.log(data));
+.then((data) => console.log(data))
+
+//neatsisiuncia
+.then(function (data){
+    console.log(data.items);
+    data.items.forEach(item => {
+        console.log(item.brand);
+        console.log(item.models);
+        let itemCard = document.createElement('div');
+        itemCard.innerHTML = `Brand: ${item.brand}, Models:  ${item.models}`;
+        results.append(itemCard);
+    })
+    }).catch(function(e){
+        console.log(e)
+})

@@ -25,15 +25,21 @@ division(a, b) - priima du skaičius ir grąžina jų dalybos rezultatą;
 //      }
 //     }
 //     console.log(calculator(5,6,"sum"))
+function Calculator() {
+  this.sum = function() {
+    return this.a + this.b;
+  };
+  this.sub = function() {
+    return this.a - this.b;
+  };
+  this.mul = function() {
+    return this.a + this.b;
+  };
+  
+  this.div = function() {
+    return this.a / this.b;
+  };
+}
 
-const math = {
-    numbers : [x, y],
-    add: function (x, y) {
-        return x + y
-    },
-    multiply: function (x, y) {
-        return x * y
-    }
- }
- 
- math.numbers;
+let calculator = new Calculator();
+
